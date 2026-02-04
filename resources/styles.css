@@ -264,9 +264,15 @@ h3 {
 
 .content-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* Всегда 3 колонки */
     gap: 25px;
     margin-top: 20px;
+}
+
+.content-grid .card:nth-child(7) { /* TODO: если будут добавлены новые карточки (то есть 7 не последняя), то поменять 7 на другую число*/
+    grid-column: 2; /* Помещаем во вторую колонку (центральную) */
+    justify-self: center; /* Центрируем внутри этой колонки */
+    max-width: 350px; /* Ограничиваем ширину, как у остальных */
 }
 
 .card {
