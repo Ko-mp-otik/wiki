@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Википедия проекта - Главная</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="resources/styles.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 15px;">
+                        <div class="logo-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h1>Википедия проекта</h1>
+                            <p>Официальная документация и руководства</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Навигация с вкладками -->
+    <nav>
+        <div class="container nav-container">
+            <ul class="tabs">
+                <li class="tab active">
+                    <a href="index.html" style="color: inherit; text-decoration: none;">Главная</a>
+                </li>
+                <li class="tab">
+                    <a href="pages/beginners.html" style="color: inherit; text-decoration: none;">Новичкам</a>
+                </li>
+                <li class="tab">
+                    <a href="pages/rules.html" style="color: inherit; text-decoration: none;">Правила сервера</a>
+                </li>
+                <li class="tab">
+                    <a href="pages/roles.html" style="color: inherit; text-decoration: none;">Роли</a>
+                </li>
+                <li class="tab">
+                    <a href="pages/paperwork.html" style="color: inherit; text-decoration: none;">Бумажная работа</a>
+                </li>
+                <li class="tab">
+                    <a href="pages/modes.html" style="color: inherit; text-decoration: none;">Режимы</a>
+                </li>
+                <li class="tab">
+                    <a href="pages/renders.html" style="color: inherit; text-decoration: none;">Рендер карт</a>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn btn-secondary" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i> Тема
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основное содержимое -->
+    <main class="container">
+        <!-- Приветственная секция -->
+        <section>
+            <div class="welcome-section">
+                <h2>Добро пожаловать в вики проекта!</h2>
+                <p>
+                    Это официальная документация для нашего проекта. Здесь вы найдете всю необходимую информацию:
+                    от основных правил до продвинутых руководств. Используйте вкладки выше для навигации по разделам.
+                </p>
+            </div>
+
+            <h3>Быстрый доступ к разделам</h3>
+            <div class="content-grid">
+                <div class="card">
+                    <i class="fas fa-users"></i>
+                    <h4>Новичкам</h4>
+                    <p>Всё, что нужно для старта: установка, настройка и первые шаги в проекте.</p>
+                    <a href="pages/beginners.html" class="card-link">
+                        Перейти <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="card">
+                    <i class="fas fa-gavel"></i>
+                    <h4>Правила сервера</h4>
+                    <p>Основные правила поведения и технические ограничения для всех участников.</p>
+                    <a href="pages/rules.html" class="card-link">
+                        Перейти <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="card">
+                    <i class="fas fa-user-tag"></i>
+                    <h4>Роли</h4>
+                    <p>Описание доступных ролей в проекте, их обязанности и возможности.</p>
+                    <a href="pages/roles.html" class="card-link">
+                        Перейти <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="card">
+                    <i class="fas fa-file-alt"></i>
+                    <h4>Бумажная работа</h4>
+                    <p>Шаблоны документов, формы заявок и другая административная информация.</p>
+                    <a href="pages/paperwork.html" class="card-link">
+                        Перейти <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="card">
+                    <i class="fas fa-gamepad"></i>
+                    <h4>Режимы</h4>
+                    <p>Все доступные игровые режимы, их особенности и правила.</p>
+                    <a href="pages/modes.html" class="card-link">
+                        Перейти <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="card">
+                    <i class="fas fa-map"></i>
+                    <h4>Рендер карт</h4>
+                    <p>Создание и работа с картами, визуализация игрового мира.</p>
+                    <a href="pages/renders.html" class="card-link">
+                        Перейти <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Википедия проекта</h4>
+                    <p>Официальная документация и руководства для участников проекта.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Быстрые ссылки</h4>
+                    <ul class="footer-links">
+                        <li><a href="beginners.html">Новичкам</a></li>
+                        <li><a href="rules.html">Правила</a></li>
+                        <li><a href="roles.html">Роли</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Ресурсы</h4>
+                    <ul class="footer-links">
+                        <li><a href="paperwork.html">Документы</a></li>
+                        <li><a href="modes.html">Режимы</a></li>
+                        <li><a href="renders.html">Рендеры</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 Википедия проекта. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Простые функции для взаимодействия
+        function handleSearch(event) {
+            if (event.key === 'Enter') {
+                const query = event.target.value;
+                alert('Поиск по запросу: "' + query + '". В реальной версии здесь будет поиск по вики.');
+                event.target.value = '';
+            }
+        }
+
+        function handleLogin() {
+            alert('Функция входа будет доступна после подключения к серверу авторизации.');
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            const btn = document.querySelector('.btn-secondary i');
+
+            if (body.classList.contains('light-theme')) {
+                body.classList.remove('light-theme');
+                btn.classList.remove('fa-sun');
+                btn.classList.add('fa-moon');
+                document.querySelector('.btn-secondary').innerHTML = '<i class="fas fa-moon"></i> Тема';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.add('light-theme');
+                btn.classList.remove('fa-moon');
+                btn.classList.add('fa-sun');
+                document.querySelector('.btn-secondary').innerHTML = '<i class="fas fa-sun"></i> Тема';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Проверка сохранённой темы при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-theme');
+                document.querySelector('.btn-secondary').innerHTML = '<i class="fas fa-sun"></i> Тема';
+            }
+
+            // Подсветка активной вкладки
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const tabs = document.querySelectorAll('.tab a');
+
+            tabs.forEach(tab => {
+                const tabHref = tab.getAttribute('href');
+                if (tabHref === currentPage || (currentPage === '' && tabHref === 'index.html')) {
+                    tab.parentElement.classList.add('active');
+                } else {
+                    tab.parentElement.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
