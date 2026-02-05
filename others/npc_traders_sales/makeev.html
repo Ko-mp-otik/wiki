@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Википедия проекта - Торговый агент Ганзы</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../resources/styles.css">
+    <style>
+        /* Дополнительные стили для таблицы торговца */
+        .trade-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+        }
+
+        .trade-table th {
+            background-color: rgba(88, 166, 255, 0.15);
+            color: var(--accent-color);
+            font-weight: 600;
+            text-align: left;
+            padding: 16px 20px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .trade-table td {
+            padding: 14px 20px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-light);
+        }
+
+        .trade-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .trade-table tr:hover {
+            background-color: rgba(88, 166, 255, 0.05);
+        }
+
+        .item-badge {
+            display: inline-block;
+            background: rgba(88, 166, 255, 0.1);
+            border: 1px solid rgba(88, 166, 255, 0.3);
+            border-radius: 4px;
+            padding: 4px 10px;
+            margin: 2px 4px 2px 0;
+            font-size: 0.85rem;
+            color: var(--accent-color);
+        }
+
+        .item-badge.received {
+            background: rgba(46, 160, 67, 0.1);
+            border-color: rgba(46, 160, 67, 0.3);
+            color: #2ea043;
+        }
+
+        .item-badge.given {
+            background: rgba(218, 54, 51, 0.1);
+            border-color: rgba(218, 54, 51, 0.3);
+            color: #da3633;
+        }
+
+        .trade-note {
+            background: rgba(249, 197, 19, 0.1);
+            border-left: 4px solid #f9c513;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .trade-table {
+                display: block;
+                overflow-x: auto;
+            }
+
+            .item-badge {
+                display: block;
+                margin: 4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../index.html" style="text-decoration: none; display: flex; align-items: center; gap: 15px;">
+                        <div class="logo-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h1>Википедия проекта</h1>
+                            <p>Официальная документация и руководства</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Поиск по вики..." onkeypress="handleSearch(event)">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Навигация с вкладками -->
+    <nav>
+        <div class="container nav-container">
+            <ul class="tabs">
+                <li class="tab">
+                    <a href="../index.html">Главная</a>
+                </li>
+                <li class="tab">
+                    <a href="../beginners.html">Новичкам</a>
+                </li>
+                <li class="tab">
+                    <a href="../rules.html">Правила</a>
+                </li>
+                <li class="tab active">
+                    <a href="../roles.html">Роли</a>
+                </li>
+                <li class="tab">
+                    <a href="../paperwork.html">Документы</a>
+                </li>
+                <li class="tab">
+                    <a href="../modes.html">Режимы</a>
+                </li>
+                <li class="tab">
+                    <a href="../renders.html">Рендеры</a>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn btn-primary" onclick="handleLogin()">
+                    <i class="fas fa-sign-in-alt"></i> Войти
+                </button>
+                <button class="btn btn-secondary" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i> Тема
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основное содержимое -->
+    <main class="container">
+        <a href="../roles.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Назад к списку ролей
+        </a>
+
+        <div class="role-detail">
+            <div class="role-header">
+                <div class="role-icon">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+                <div class="role-title">
+                    <h3>Торговый агент Макеев</h3>
+                    <p class="role-meta">Фракция: Спарта</p>
+                </div>
+            </div>
+
+            <div class="role-section">
+                <h4><i class="fas fa-info-circle"></i> Описание</h4>
+                <p>Макеев — бывший охотник на различных мутантов метро.</p>
+            </div>
+
+            <div class="trade-note">
+                <i class="fas fa-exclamation-circle"></i> <strong>Важно:</strong> Некоторые предложения в игре могут отличаться от тех, что описаны здесь.
+            </div>
+
+            <div class="role-section">
+                <h4><i class="fas fa-exchange-alt"></i> Таблица торговых предложений</h4>
+                <p>Ниже представлены стандартные торговые предложения, доступные торговому агенту Макееву.</p>
+
+                <table class="trade-table">
+                    <thead>
+                        <tr>
+                            <th width="25%">Название предложения</th>
+                            <th width="35%">Принимаемые предметы (от игрока)</th>
+                            <th width="30%">Отдаваемые предметы (игроку)</th>
+                            <th width="5%">Лимит</th>
+                            <th width="5%">Поставки</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Обмен патронов</strong></td>
+                            <td>
+                                <span class="item-badge given">100 патронов 5.45x39</span>
+                            </td>
+                            <td>
+                                <span class="item-badge received">85 патронов 5.56x45</span>
+                            </td>
+                            <td align="center">∞</td>
+                            <td align="center">-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Запчасти для фильтров</strong></td>
+                            <td>
+                                <span class="item-badge given">Исправный противогаз</span><br>
+                                <span class="item-badge given">2 активированных угля</span>
+                            </td>
+                            <td>
+                                <span class="item-badge received">1 новый фильтр</span><br>
+                                <span class="item-badge received">500 военных рублей</span>
+                            </td>
+                            <td align="center">5 </td>
+                            <td align="center">1 / мин</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="role-section">
+                <h4><i class="fas fa-file-alt"></i> Дополнительная информация</h4>
+                <p><strong>В случае наличия предложений по составу данной страницы обращайтесь в <a href="https://discord.gg/hjVpnug8C4" class="card-link"> Discord </a>.</strong> </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Википедия проекта</h4>
+                    <p>Официальная документация и руководства для участников проекта.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Быстрые ссылки</h4>
+                    <ul class="footer-links">
+                        <li><a href="../beginners.html">Новичкам</a></li>
+                        <li><a href="../rules.html">Правила</a></li>
+                        <li><a href="../roles.html">Роли</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Ресурсы</h4>
+                    <ul class="footer-links">
+                        <li><a href="../paperwork.html">Документы</a></li>
+                        <li><a href="../modes.html">Режимы</a></li>
+                        <li><a href="../renders.html">Рендеры</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 Википедия проекта. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Функции для поиска, входа и темы
+        function handleSearch(event) {
+            if (event.key === 'Enter') {
+                const query = event.target.value;
+                alert('Поиск по запросу: "' + query + '". В реальной версии здесь будет поиск по вики.');
+                event.target.value = '';
+            }
+        }
+
+        function handleLogin() {
+            alert('Функция входа будет доступна после подключения к серверу авторизации.');
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            const btn = document.querySelector('.btn-secondary i');
+
+            if (body.classList.contains('light-theme')) {
+                body.classList.remove('light-theme');
+                btn.classList.remove('fa-sun');
+                btn.classList.add('fa-moon');
+                document.querySelector('.btn-secondary').innerHTML = '<i class="fas fa-moon"></i> Тема';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.add('light-theme');
+                btn.classList.remove('fa-moon');
+                btn.classList.add('fa-sun');
+                document.querySelector('.btn-secondary').innerHTML = '<i class="fas fa-sun"></i> Тема';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Проверка сохранённой темы при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-theme');
+                document.querySelector('.btn-secondary').innerHTML = '<i class="fas fa-sun"></i> Тема';
+            }
+
+            // Подсветка строк таблицы при наведении
+            const tableRows = document.querySelectorAll('.trade-table tbody tr');
+            tableRows.forEach(row => {
+                row.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = 'rgba(88, 166, 255, 0.08)';
+                });
+                row.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
