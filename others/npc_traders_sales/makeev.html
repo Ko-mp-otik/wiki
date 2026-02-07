@@ -90,64 +90,10 @@
 </head>
 <body>
     <!-- Шапка сайта -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <a href="../index.html" style="text-decoration: none; display: flex; align-items: center; gap: 15px;">
-                        <div class="logo-icon">
-                            <i class="fas fa-book-open"></i>
-                        </div>
-                        <div class="logo-text">
-                            <h1>Википедия проекта</h1>
-                            <p>Официальная документация и руководства</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="search-box">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="searchInput" placeholder="Поиск по вики..." onkeypress="handleSearch(event)">
-                </div>
-            </div>
-        </div>
-    </header>
+    <div id="header-placeholder"></div>
 
     <!-- Навигация с вкладками -->
-    <nav>
-        <div class="container nav-container">
-            <ul class="tabs">
-                <li class="tab">
-                    <a href="../index.html">Главная</a>
-                </li>
-                <li class="tab">
-                    <a href="../beginners.html">Новичкам</a>
-                </li>
-                <li class="tab">
-                    <a href="../rules.html">Правила</a>
-                </li>
-                <li class="tab active">
-                    <a href="../roles.html">Роли</a>
-                </li>
-                <li class="tab">
-                    <a href="../paperwork.html">Документы</a>
-                </li>
-                <li class="tab">
-                    <a href="../modes.html">Режимы</a>
-                </li>
-                <li class="tab">
-                    <a href="../renders.html">Рендеры</a>
-                </li>
-            </ul>
-            <div class="nav-actions">
-                <button class="btn btn-primary" onclick="handleLogin()">
-                    <i class="fas fa-sign-in-alt"></i> Войти
-                </button>
-                <button class="btn btn-secondary" onclick="toggleTheme()">
-                    <i class="fas fa-moon"></i> Тема
-                </button>
-            </div>
-        </div>
-    </nav>
+    <div id="nav-placeholder"></div>
 
     <!-- Основное содержимое -->
     <main class="container">
@@ -226,36 +172,9 @@
     </main>
 
     <!-- Футер -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Википедия проекта</h4>
-                    <p>Официальная документация и руководства для участников проекта.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Быстрые ссылки</h4>
-                    <ul class="footer-links">
-                        <li><a href="../beginners.html">Новичкам</a></li>
-                        <li><a href="../rules.html">Правила</a></li>
-                        <li><a href="../roles.html">Роли</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Ресурсы</h4>
-                    <ul class="footer-links">
-                        <li><a href="../paperwork.html">Документы</a></li>
-                        <li><a href="../modes.html">Режимы</a></li>
-                        <li><a href="../renders.html">Рендеры</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>© 2023 Википедия проекта. Все права защищены.</p>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <script src="/resources/main.js"></script>
     <script>
         // Функции для поиска, входа и темы
         function handleSearch(event) {
@@ -270,33 +189,8 @@
             alert('Функция входа будет доступна после подключения к серверу авторизации.');
         }
 
-        function toggleTheme() {
-            const body = document.body;
-            const btn = document.querySelector('.btn-secondary i');
-
-            if (body.classList.contains('light-theme')) {
-                body.classList.remove('light-theme');
-                btn.classList.remove('fa-sun');
-                btn.classList.add('fa-moon');
-                document.querySelector('.btn-secondary').innerHTML = '<i class="fas fa-moon"></i> Тема';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.classList.add('light-theme');
-                btn.classList.remove('fa-moon');
-                btn.classList.add('fa-sun');
-                document.querySelector('.btn-secondary').innerHTML = '<i class="fas fa-sun"></i> Тема';
-                localStorage.setItem('theme', 'light');
-            }
-        }
-
         // Проверка сохранённой темы при загрузке
         document.addEventListener('DOMContentLoaded', function() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'light') {
-                document.body.classList.add('light-theme');
-                document.querySelector('.btn-secondary').innerHTML = '<i class="fas fa-sun"></i> Тема';
-            }
-
             // Подсветка строк таблицы при наведении
             const tableRows = document.querySelectorAll('.trade-table tbody tr');
             tableRows.forEach(row => {
