@@ -20,6 +20,14 @@ Promise.all([
             tab.parentElement.classList.remove('active');
         }
     });
+
+    // Проверка сохранённой темы при загрузке
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+    document.body.classList.add('light-theme');
+    const btn = document.querySelector('.btn-secondary');
+    if (btn) btn.innerHTML = '<i class="fas fa-sun"></i> Тема';
+    }
 });
 
 // Переключение темы
@@ -41,12 +49,3 @@ function toggleTheme() {
         localStorage.setItem('theme', 'light');
     }
 }
-
-// Проверка сохранённой темы при загрузке
-document.addEventListener('DOMContentLoaded', function() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-        document.body.classList.add('light-theme');
-        document.querySelector('.btn-secondary').innerHTML = '<i class="fas fa-sun"></i> Тема';
-    }
-});
