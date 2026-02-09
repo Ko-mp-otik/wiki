@@ -1,79 +1,30 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <base href="/wiki/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Википедия проекта - Офицер Ганзы</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../resources/styles.css">
+    <link rel="stylesheet" href="resources/styles.css">
 </head>
 <body>
     <!-- Шапка сайта -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <a href="../index.html" style="text-decoration: none; display: flex; align-items: center; gap: 15px;">
-                        <div class="logo-icon">
-                            <i class="fas fa-book-open"></i>
-                        </div>
-                        <div class="logo-text">
-                            <h1>Википедия проекта</h1>
-                            <p>Официальная документация и руководства</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
+    <div id="header-placeholder"></div>
 
     <!-- Навигация с вкладками -->
-    <nav>
-        <div class="container nav-container">
-            <ul class="tabs">
-                <li class="tab">
-                    <a href="../../index.html" style="color: inherit; text-decoration: none;">Главная</a>
-                </li>
-                <li class="tab">
-                    <a href="../../pages/beginners.html" style="color: inherit; text-decoration: none;">Новичкам</a>
-                </li>
-                <li class="tab">
-                    <a href="../../pages/rules.html" style="color: inherit; text-decoration: none;">Правила сервера</a>
-                </li>
-                <li class="tab active">
-                    <a href="../../pages/roles.html" style="color: inherit; text-decoration: none;">Роли</a>
-                </li>
-                <li class="tab">
-                    <a href="../../pages/paperwork.html" style="color: inherit; text-decoration: none;">Бумажная работа</a>
-                </li>
-                <li class="tab">
-                    <a href="../../pages/modes.html" style="color: inherit; text-decoration: none;">Режимы</a>
-                </li>
-                <li class="tab">
-                    <a href="../../pages/renders.html" style="color: inherit; text-decoration: none;">Рендер карт</a>
-                </li>
-                <li class="tab">
-                    <a href="../../pages/others.html" style="color: inherit; text-decoration: none;">Прочее</a>
-                </li>
-            </ul>
-            <div class="nav-actions">
-                <button class="btn btn-secondary" onclick="toggleTheme()">
-                    <i class="fas fa-moon"></i> Тема
-                </button>
-            </div>
-        </div>
-    </nav>
+    <div id="nav-placeholder"></div>
 
     <!-- Основное содержимое -->
     <main class="container">
-        <a href="../../fractions/hansa.html" class="back-link">
+        <a href="fractions/hansa.html" class="back-link">
             <i class="fas fa-arrow-left"></i> Назад к списку ролей
         </a>
 
         <div class="role-detail">
             <div class="role-header">
                 <div class="role-icon">
-                     <img src="../../resources/roles/hansa/OfficerHansa.png"
+                     <img src="resources/roles/hansa/OfficerHansa.png"
                      width="128"
                      height="128"
                      data-file-width="32"
@@ -132,65 +83,8 @@
     </main>
 
     <!-- Футер -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Википедия проекта</h4>
-                    <p>Официальная документация и руководства для участников проекта.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Быстрые ссылки</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../pages/beginners.html">Новичкам</a></li>
-                        <li><a href="../../pages/rules.html">Правила</a></li>
-                        <li><a href="../../pages/roles.html">Роли</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Ресурсы</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../pages/paperwork.html">Документы</a></li>
-                        <li><a href="../../pages/modes.html">Режимы</a></li>
-                        <li><a href="../../pages/renders.html">Рендеры</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>© 2026 Википедия проекта "Metro 14". Все права защищены.</p>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
-    <script>
-
-        function toggleTheme() {
-            const body = document.body;
-            const btn = document.querySelector('.btn-secondary i');
-
-            if (body.classList.contains('light-theme')) {
-                body.classList.remove('light-theme');
-                btn.classList.remove('fa-sun');
-                btn.classList.add('fa-moon');
-                document.querySelector('.btn-secondary').innerHTML = '<i class="fas fa-moon"></i> Тема';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.classList.add('light-theme');
-                btn.classList.remove('fa-moon');
-                btn.classList.add('fa-sun');
-                document.querySelector('.btn-secondary').innerHTML = '<i class="fas fa-sun"></i> Тема';
-                localStorage.setItem('theme', 'light');
-            }
-        }
-
-        // Проверка сохранённой темы при загрузке
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'light') {
-                document.body.classList.add('light-theme');
-                document.querySelector('.btn-secondary').innerHTML = '<i class="fas fa-sun"></i> Тема';
-            }
-        });
-    </script>
+    <script src="resources/main.js"></script>
 </body>
 </html>
